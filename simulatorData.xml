@@ -1,29 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<transactions>
-    <buy>
-<!--    <stock>
-            <name>NIO</name>
-            <datetime>2020-03-17 18:04:51</datetime>
-            <price>2.10</price>
-        </stock>
-        <currency>
-            <name>USD/CHF</name>
-            <datetime>2020-03-17 18:04:51</datetime>
-            <price></price>
-        </currency>
-    -->
-    </buy>
+    <transactions>
+        <buy>
+    <!--    <stock>
+                <name>NIO</name>
+                <datetime>17/03/2020 18:04:51</datetime>
+                <price>2.10</price>
+            </stock>
+            <currency>
+                <name>USD/CHF</name>
+                <datetime>17/03/2020 18:04:51</datetime>
+                <price></price>
+            </currency>
+        -->
+        </buy>
 
-    <sell>
-<!--    <stock>
-            <name>NIO</name>
-            <datetime>2020-03-17 18:04:51</datetime>
-            <price>2.88</price>
-        </stock>
-        <currency>
-            <name>USD/CHF</name>
-            <datetime>2020-03-17 18:04:51</datetime>
-            <price>2.88</price>
-        </currency>-->
-    </sell>
-</transactions>
+        <sell>
+    <!--    <stock>
+                <name>NIO</name>
+                <datetime>17/03/2020 18:04:51</datetime>
+                <price>2.88</price>
+            </stock>
+            <currency>
+                <name>USD/CHF</name>
+                <datetime>17/03/2020 18:04:51</datetime>
+                <price>2.88</price>
+            </currency>-->
+        </sell>
+    </transactions>
