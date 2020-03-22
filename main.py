@@ -6,7 +6,6 @@ from time import sleep
 import requests
 import lxml.html
 import password
-# import asyncio
 import prettytable
 import os
 import platform
@@ -25,36 +24,18 @@ class Aksje:
         self.username = credentials['username']
         self.password = credentials['password']
         self.browser.get('https://trader.degiro.nl/login/#/login')
-        self.browser.set_window_position(100000000, 0)
         self.browser.set_window_size(500, 800)
         self.ticker = ticker
         wait = WebDriverWait(self.browser, 10)
         userForm = wait.until(EC.presence_of_element_located((By.XPATH, '//*[@id="username"]')))
         passwordForm = wait.until(EC.presence_of_element_located((By.XPATH, '//*[@id="password"]')))
-        # finally:
-            # self.browser.quit()
-        # try:
-        #     userForm = WebDriverWait(self.browser, 10).until(
-        #         EC.presence_of_element_located((By.XPATH, '//*[@id="username"]'))
-        #     )
-        #     passwordForm = WebDriverWait(self.browser, 10).until(
-        #         EC.presence_of_element_located((By.XPATH, '//*[@id="password"]'))
-        #     )
-        # finally:
-        #     self.browser.quit()
         userForm.send_keys(self.username)
         passwordForm.send_keys(self.password)
-        # wait.until(EC.element_to_be_clickable((By.XPATH, '//*[@id="loginForm"]/div[3]/button'))).click()
         self.browser.find_element_by_xpath('//*[@id="loginForm"]/div[3]/button').click()
-        # sleep(1)
-        # self.browser.find_element_by_xpath('//*[@id="appWorkspace"]/div[2]/main/div/div[2]/div/div[1]/button').send_keys(ticker)
         wait.until(EC.element_to_be_clickable((By.XPATH, '//*[@id="appWorkspace"]/div[2]/main/div/div[3]/div/div[1]/button'))).send_keys(ticker)
         wait.until(EC.presence_of_element_located((By.XPATH, '/html/body/div/div/div[2]/div[2]/main/div/div/div/div/div[2]/div/a[1]/div[1]/span[1]'))).click()
     def buy(self):
         print("BOUGHT")
-
-
-# def run(credentials, ticker):
 
 
 def price_check(ticker, headers, credentials, objs):
@@ -84,19 +65,12 @@ def price_check(ticker, headers, credentials, objs):
     except KeyboardInterrupt:
         pass
             
-# obj = Aksje("FlyingRainbowPotato", password)
 def main():
-    credentials = {'username': "", 'password': password.pw()}
+    credentials = {'username': "FlyingRainbowPotato", 'password': password.pw()}
 
     headers = {"User-Agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3987.122 Safari/537.36"}
 
-    TICKER = ['NIO']
-    # print(obj.username)
-    # for tickers in ticker:
-    #     objects = []
-    #     objects.append(Aksje(credentials, tickers))
-    #     print(objects)
-    #     sleep(2)
+    TICKER = ['TSLA']
         
     objs = {tickers: Aksje(credentials = credentials, ticker = tickers) for tickers in TICKER}
 
